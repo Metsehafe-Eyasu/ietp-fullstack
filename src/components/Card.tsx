@@ -7,9 +7,9 @@ interface CardProps {
 
 const Card = ({name, timestamp} : CardProps) => {
   return (
-    <div className="bg-white rounded-lg overflow-hidden shadow-md p-6 w-72 mx-auto my-4 mb-4">
+    <div className="bg-slate-200 rounded-lg overflow-hidden shadow-md p-4 w-72">
       <h1 className="text-2xl font-bold mb-2">{name}</h1>
-      <p className="text-gray-500">{formatTimestamp(timestamp)}</p>
+      <p className="text-gray-500 text-sm">{formatTimestamp(timestamp)}</p>
     </div>
   );
 };
