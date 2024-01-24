@@ -2,7 +2,7 @@
 
 import { Line } from "react-chartjs-2";
 import { type Item } from "@/lib/interfaces";
-import { formatTimestamp } from "@/app/utils";
+import { formatTimeForChart } from "@/app/utils";
 
 type Props = {
   data: Item[];
@@ -22,16 +22,14 @@ const Chart: React.FC<Props> = ({ data }) => {
     },
   };
 
-  const revData = [...data].reverse();
-
-  const labels = revData.map((item) => formatTimestamp(item.timestamp));
+  const labels = data.map((item) => formatTimeForChart(item.timestamp));
 
   const test = {
     labels,
     datasets: [
       {
         label: "Step count",
-        data: revData.map((item) => item.name),
+        data: data.map((item) => item.name),
         borderColor: "rgb(255, 99, 132)",
         backgroundColor: "rgba(255, 99, 132, 0.5)",
       }
