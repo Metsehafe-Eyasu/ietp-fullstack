@@ -59,7 +59,7 @@ export default function Home() {
             <Card key={item.id} name={item.name} timestamp={item.timestamp} />
           ))}
         </div>
-        <div className="w-full">
+        <div className="w-3/4">
           <Chart data={memoizedData} />
         </div>
       </div>
